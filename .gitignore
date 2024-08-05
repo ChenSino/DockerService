@@ -1,0 +1,10 @@
+###rustdesk
+rustdesk/data/*
+
+###nginx
+
+
+###elk
+
+elk/data/*
+elk/logs/*

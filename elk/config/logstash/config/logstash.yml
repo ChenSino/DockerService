@@ -1,0 +1,4 @@
+# 开启xpack监控
+xpack.monitoring.enabled: true
+xpack.monitoring.elasticsearch.hosts: ["http://localhost:9200"]
+xpack.monitoring.collection.interval: 10s
