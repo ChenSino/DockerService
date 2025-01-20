@@ -1,6 +1,8 @@
 # 集群节点名称
 node.name: "es_node01"
 
+# node.ingest: true
+
 # 设置集群名称为elasticsearch
 cluster.name: "es_cluster"
 
@@ -15,7 +17,7 @@ discovery.type: single-node
 #node.master: true
 #当前该节点是否存储数据
 #node.data: true
-node.roles: [master,data,remote_cluster_client]
+node.roles: [master,data,remote_cluster_client,ingest]
 
 # 是否支持跨域
 http.cors.enabled: true

@@ -1,0 +1,39 @@
+web:
+  username: admin      # web账号
+  password: abc123!@#  #web界面管理密码
+  host: 0.0.0.0
+  port: 2703
+models:
+  polaris-test:        # 项目1
+    compress_with:
+      type: tgz
+    storages:          # 备份保存存储方式
+      local:
+        type: local
+        keep: 7
+        path: /data
+      minio:
+        type: minio
+        bucket: backup
+        endpoint: https://polaris.xxx.com:9000
+        path: polaris-test
+        access_key_id: minioadmin
+        secret_access_key: minioadmin
+        keep: 7
+    notifiers:        ## 通知方式
+      feishu:
+        type: feishu
+        url: https://open.feishu.cn/open-apis/bot/v2/hook/xxxx
+        on_success: true
+    schedule:
+      # At 01:00 every day.
+      cron: "0 1 * * *"
+    databases:
+      app:
+          database: app
+          type: mysql
+          host: 10.10.104.34
+          port: 3306
+          username: admin
+          password: abc123!@#
+          args: --single-transaction --quick --skip-ssl
